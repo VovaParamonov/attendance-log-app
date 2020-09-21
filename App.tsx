@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {useEffect, useState} from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import './global';
 
 import useRequest from "./src/hooks/useRequest";
 import useStorage from "./src/hooks/useStorage";
@@ -15,12 +16,12 @@ export default function App() {
   useEffect(() => {
 
     (async () => {
-      const result = await createRequest("https://my-json-server.typicode.com/typicode/demo/posts");
+      const result = await getData("title");
 
-      setTest(result[0].title);
-
-
+      setTest(result!);
     })();
+
+    console.log("test global variable:", global.id);
   }, []);
 
 
