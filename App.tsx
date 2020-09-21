@@ -1,6 +1,5 @@
-import { StatusBar } from 'expo-status-bar';
 import React, {useEffect, useState} from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import './global';
 
 import useRequest from "./src/hooks/useRequest";
@@ -20,8 +19,6 @@ export default function App() {
 
       setTest(result!);
     })();
-
-    console.log("test global variable:", global.id);
   }, []);
 
 
