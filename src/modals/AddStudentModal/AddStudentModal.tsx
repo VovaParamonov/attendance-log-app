@@ -1,5 +1,5 @@
-import React from "react";
-import "./addStudentModal.css";
+import React, {useEffect} from "react";
+import "./AddStudentModalStyle.js";
 import {WebView} from "react-native-webview";
 import {Modal} from "react-native";
 
@@ -12,6 +12,7 @@ const AddStudentModal: (props: typeProps) => JSX.Element = () => {
         <Modal>
             <WebView
                 sharedCookiesEnabled
+//                @ts-ignore
                 source={{ uri: global.googleFormUrl }}
                 mixedContentMode="compatibility"
                 javaScriptEnabled
