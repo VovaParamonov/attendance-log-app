@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {Text, View} from 'react-native';
 import './global';
+import globalStyles from "./globalStyles";
+import style from "./AppStyle";
 
 import useRequest from "./src/hooks/useRequest";
 import useStorage from "./src/hooks/useStorage";
@@ -37,19 +39,10 @@ export default function App() {
   }
 
   return (
-    <View style={styles.container}>
+    <View style={style.app}>
       {getCurrentScreen()}
       {/*<Text>Test: {test}</Text>*/}
-      <LaunchScreen />
+      {/*<LaunchScreen />*/}
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
