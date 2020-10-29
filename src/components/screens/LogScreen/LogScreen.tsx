@@ -15,7 +15,6 @@ const LogScreen: (props:typeProps) => JSX.Element = () => {
         <View style={{
             flex: 1,
             flexGrow: 3.5,
-            backgroundColor: "purple"
         }}>
 
         </View>

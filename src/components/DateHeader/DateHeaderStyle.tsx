@@ -16,5 +16,28 @@ export default StyleSheet.create({
         alignItems: "center",
         flexDirection: "row",
         justifyContent: "space-between"
+    },
+
+    date_header__btn: {
+        width: 35,
+        // height: 50,
+        resizeMode: "contain",
+    },
+
+    date_header__date: {
+        flex: 1,
+        flexDirection: "column",
+        alignItems: "center"
+    },
+
+    date_header__date_number: {
+        fontWeight: "bold",
+        fontSize: 40,
+        color: "white"
+    },
+
+    date_header__date_day: {
+        fontSize: 20,
+        color: "white"
     }
 });
