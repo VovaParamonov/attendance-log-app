@@ -1,6 +1,6 @@
 import AsyncStorage from '@react-native-community/async-storage';
 
-type returnType = {
+export type returnType = {
     saveData:  (name: string, value: string) => Promise<boolean>
     getData: (name: string) => Promise<string | null>
     clearStorage: () => Promise<boolean>
