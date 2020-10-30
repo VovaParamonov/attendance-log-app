@@ -3,13 +3,15 @@ import GoogleSheet, {batchGet} from 'react-native-google-sheet';
 import {StyleSheet, TouchableOpacity, View, Text} from "react-native";
 import React, {useContext, useEffect, useState} from "react";
 import useStorage from "../hooks/useStorage";
-import googleAccessContext from "../contexts/googleAccessContext";
+import globalDataContext from "../contexts/globalDataContext";
 
 
 export default function LaunchScreen() {
     const GOOGLE_REDIRECT_URI = 'http://localhost';
 
-    const {requestLoading, accessToken} = useContext(googleAccessContext)!;
+    const {googleAccessController} = useContext(globalDataContext)!;
+
+    const {requestLoading, accessToken} = googleAccessController;
 
     const {saveData} = useStorage();
 

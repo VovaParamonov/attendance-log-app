@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {View, Text, StyleSheet, TouchableOpacity, Image} from "react-native";
-import style from "./StudentCheckerStyle.ts"
+import style from "./StudentCheckerStyle"
 import globalStyles from "../../../../globalStyles";
 import {Student} from "../../../models/global";
 
@@ -23,17 +23,18 @@ const StudentChecker: (props: propsType) => JSX.Element = (props) => {
             {backgroundColor: selected? "#e1fff3": "#fff"}
             ])}
         onPress={selectToggle}
+        onLongPress={() => alert(`Student: ${student.full_name}`)}
     >
         <Text style={style.student_check_item_text} >{student.full_name}</Text>
         <View style={style.student_check_item__check_box} >
             <Image
                 source={require("../../../../assets/imgs/check.png")}
-                style={StyleSheet.compose(
+                style={StyleSheet.flatten([
                     style.student_check_item__check_box_image,
                     {
                         display: selected? "flex" : "none"
                     }
-                    )
+                    ])
                 }
             />
         </View>

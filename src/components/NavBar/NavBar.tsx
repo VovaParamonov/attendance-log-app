@@ -2,12 +2,12 @@ import React, {useContext} from "react";
 import {View, Text, TouchableOpacity, Image, StyleSheet} from "react-native";
 import style from "./NavBarStyle";
 import globalStyles from "../../../globalStyles";
-import googleAccessContext from "../../contexts/googleAccessContext";
+import globalDataContext from "../../contexts/globalDataContext";
 
 type propsType = {}
 
 const NavBar: (props: propsType) => JSX.Element = () => {
-    const {requestData} = useContext(googleAccessContext)!;
+    const {pullData} = useContext(globalDataContext)!;
 
 
     return <View style={style.nav_bar}>
@@ -33,7 +33,7 @@ const NavBar: (props: propsType) => JSX.Element = () => {
                 />
             </View>
         </TouchableOpacity>
-        <TouchableOpacity onPress={requestData} style={style.nav_bar__btn}>
+        <TouchableOpacity onPress={pullData} style={style.nav_bar__btn}>
             <Image
                 source={require("../../../assets/imgs/reload.png")}
                 style={style.nav_bar__btn_image}

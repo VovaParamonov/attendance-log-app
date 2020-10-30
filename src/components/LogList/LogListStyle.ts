@@ -6,5 +6,9 @@ export default StyleSheet.create({
         flexGrow: 3.5,
         paddingTop: 30,
         paddingBottom: 30
+    },
+
+    group_container: {
+        marginBottom: 50
     }
 });

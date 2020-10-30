@@ -4,32 +4,24 @@ import './global';
 import globalStyles from "./globalStyles";
 import style from "./AppStyle";
 
-import useRequest from "./src/hooks/useRequest";
-import useStorage from "./src/hooks/useStorage";
 import LaunchScreen from "./src/components/launchScreen";
-import {screensVariants} from "./src/models/global";
+import {screensVariants, Student} from "./src/models/global";
 import ListScreen from "./src/components/screens/ListScreen/ListScreen";
 import LogScreen from "./src/components/screens/LogScreen/LogScreen";
 import NavBar from "./src/components/NavBar/NavBar";
 
-import googleAccessContext from "./src/contexts/googleAccessContext";
-import useGoogleAccess from "./src/API/useGoogleAccess";
+import globalDataContext from "./src/contexts/globalDataContext";
+import useDataModule from "./src/hooks/useDataModule";
 
 export default function App() {
-    const [test, setTest] = useState<string>("");
     const [selectedScreen, setSelectedScreen] = useState<screensVariants>("log");
-    const [createRequest, loading] = useRequest();
 
-    const googleAccessModule = useGoogleAccess();
-
-    const {saveData, getData, clearStorage} = useStorage();
+    const globalDataModule = useDataModule();
 
     useEffect(() => {
 
         (async () => {
-            const result = await getData("title");
 
-            setTest(result!);
         })();
     }, []);
 
@@ -46,11 +38,11 @@ export default function App() {
 
     return (
         <View style={style.app}>
-            <googleAccessContext.Provider value={googleAccessModule}>
+            <globalDataContext.Provider value={globalDataModule}>
                 {getCurrentScreen()}
                 <LaunchScreen />
                 <NavBar/>
-            </googleAccessContext.Provider>
+            </globalDataContext.Provider>
         </View>
     );
 }
