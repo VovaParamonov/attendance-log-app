@@ -48,7 +48,6 @@ export default function App() {
         <View style={style.app}>
             <googleAccessContext.Provider value={googleAccessModule}>
                 {getCurrentScreen()}
-                {/*<Text>Test: {test}</Text>*/}
                 <LaunchScreen />
                 <NavBar/>
             </googleAccessContext.Provider>
