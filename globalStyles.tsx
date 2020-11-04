@@ -10,7 +10,7 @@ export default StyleSheet.create({
         height: "100%"
     },
 
-    //group styles
+    //GROUP
     group_title: {
         // backgroundColor: "red",
         width: "120%",
@@ -21,5 +21,30 @@ export default StyleSheet.create({
     group_title_text: {
         fontWeight: "100",
         color: "#b9b9b9",
+    },
+
+    //MODAL
+
+    modal_wrapper: {
+        backgroundColor: "red",
+        flex: 1,
+        flexDirection: "row",
+        justifyContent: "center",
+        alignItems: "center",
+    },
+
+    modal: {
+        backgroundColor: "#fff",
+        borderRadius: 20,
+        // flex: 1,
+        width: "85%",
+        minHeight: 350,
+        height: "40%",
+
+        shadowRadius: 10,
+        shadowOffset: { width: 20, height: 5 },
+        shadowColor: "#eaeaea",
+        shadowOpacity: 0.1,
+        elevation: 1,
     }
 });

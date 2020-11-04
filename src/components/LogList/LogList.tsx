@@ -1,5 +1,5 @@
 import React from "react";
-import {View, Text, ScrollView, StyleSheet} from "react-native";
+import {View, Text, ScrollView, StyleSheet, Modal, Alert} from "react-native";
 import style from "./LogListStyle";
 import globalStyles from "../../../globalStyles";
 import {StudentsGroup} from "../../models/global";
