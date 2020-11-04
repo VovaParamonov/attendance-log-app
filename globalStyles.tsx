@@ -38,8 +38,8 @@ export default StyleSheet.create({
         borderRadius: 20,
         // flex: 1,
         width: "85%",
-        minHeight: 350,
-        height: "40%",
+        minHeight: 500,
+        height: "50%",
 
         shadowRadius: 10,
         shadowOffset: { width: 20, height: 5 },

@@ -3,11 +3,13 @@ import {View, Text, Modal, NativeSyntheticEvent, TextInputChangeEventData} from 
 import style from "./StudentInfoModalStyle"
 import globalStyles from "../../../globalStyles";
 import InputItem from "../InputItem/InputItem";
+import SelectItem from "../SelectItem/SelectItem";
 
 type propsType = {}
 
 const StudentInfoModal: (props: propsType) => JSX.Element = () => {
     const stateInterface = useState<string>("");
+    const selectStateInterface = useState<string>("option1");
 
     return <Modal
         transparent={true}
@@ -28,6 +30,11 @@ const StudentInfoModal: (props: propsType) => JSX.Element = () => {
                             stateInterface={stateInterface}
                             placeholder={"ФИО родителя"}
                             title={"Родитель"}
+                        />
+                        <SelectItem
+                            title="Группа"
+                            options={["Старшая", "Средняя"]}
+                            stateInterface={selectStateInterface}
                         />
                     </View>
                 </View>
