@@ -20,29 +20,34 @@ const StudentChecker: (props: propsType) => JSX.Element = (props) => {
         setSelected(selected => !selected);
     }
 
-    return modalOpened? <StudentInfoModal /> : <TouchableOpacity
-        style={StyleSheet.flatten([
-            style.student_check_item,
-            {backgroundColor: selected? "#e1fff3": "#fff"}
+    return modalOpened ?
+        <StudentInfoModal
+            student={student}
+            closeModal={() => setModalOpened(false)}
+        /> :
+        <TouchableOpacity
+            style={StyleSheet.flatten([
+                style.student_check_item,
+                {backgroundColor: selected ? "#e1fff3" : "#fff"}
             ])}
-        onPress={selectToggle}
-        delayLongPress={500}
-        onLongPress={() => setModalOpened(p => !p)}
-    >
-        <Text style={style.student_check_item_text} >{student.full_name}</Text>
-        <View style={style.student_check_item__check_box} >
-            <Image
-                source={require("../../../../assets/imgs/check.png")}
-                style={StyleSheet.flatten([
-                    style.student_check_item__check_box_image,
-                    {
-                        display: selected? "flex" : "none"
-                    }
+            onPress={selectToggle}
+            delayLongPress={500}
+            onLongPress={() => setModalOpened(p => !p)}
+        >
+            <Text style={style.student_check_item_text}>{student.full_name}</Text>
+            <View style={style.student_check_item__check_box}>
+                <Image
+                    source={require("../../../../assets/imgs/check.png")}
+                    style={StyleSheet.flatten([
+                        style.student_check_item__check_box_image,
+                        {
+                            display: selected ? "flex" : "none"
+                        }
                     ])
-                }
-            />
-        </View>
-    </TouchableOpacity>;
+                    }
+                />
+            </View>
+        </TouchableOpacity>;
 }
 
 export default StudentChecker;

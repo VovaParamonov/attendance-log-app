@@ -26,7 +26,7 @@ export default StyleSheet.create({
     //MODAL
 
     modal_wrapper: {
-        backgroundColor: "red",
+        backgroundColor: "rgba(192,219,234,0.5)",
         flex: 1,
         flexDirection: "row",
         justifyContent: "center",

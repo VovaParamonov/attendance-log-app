@@ -20,6 +20,7 @@
     "react-dom": "16.13.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-39.0.3.tar.gz",
     "react-native-google-sheet": "git+https://github.com/VovaParamonov/react-native-google-sheet.git",
+    "react-native-masked-text": "^1.13.0",
     "react-native-web": "~0.13.7",
     "react-native-webview": "10.7.0"
   },
